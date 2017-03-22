@@ -1,5 +1,6 @@
 '''
-getTweets(location, time) ->
+getTweets(users) -> returns an object of each users tweets
+    users :: a list of user objects
 
 getRateLimitStatus(rateSection, rateItem) -> returns the remaining API calls for each different type of call
     rateSection :: one of: 'users', 'statuses', 'help', 'search'
@@ -39,6 +40,13 @@ def getUsers(userIDs):
 
     return users
 
+def getTweets(users):
+    tweets = []
+    for user in users:
+        tweets.append(user.status())
+
+    return tweets
+
 def woeidLookup(location):
     woeid = client.fetch_woeid(location)
 
@@ -60,6 +68,9 @@ def getRateLimitStatus(rateSection, rateItem):
 
     return data['resources'][rateSection]['/' + rateSection + '/' + rateItem]['remaining']
 
-print(getTrendingTopics(woeidLookup('Germany')))
+#print(getTrendingTopics(woeidLookup('Germany')))
 #print(getRateLimitStatus('users', 'suggestions'))
 #print(woeidLookup('new humpsure'))
+temp = []
+temp.append(getUsers(2290107865))
+print(getTweets(temp))
