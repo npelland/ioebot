@@ -1,5 +1,5 @@
 '''
-getTweets(location, time)
+getTweets(location, time) ->
 
 getRateLimitStatus(rateSection, rateItem) -> returns the remaining API calls for each different type of call
     rateSection :: one of: 'users', 'statuses', 'help', 'search'
@@ -16,6 +16,8 @@ woeidLookup(location) -> returns the WOEID for the location parameter
 
 getUsers(userIds) -> returns a list of user objects corresponding to the IDs sent
     userIDs :: A list containing at least one twitter user ID
+
+
 '''
 
 import tweepy, yweather
@@ -58,6 +60,6 @@ def getRateLimitStatus(rateSection, rateItem):
 
     return data['resources'][rateSection]['/' + rateSection + '/' + rateItem]['remaining']
 
-#print(getTrendingTopics(woeidLookup('United States')))
+print(getTrendingTopics(woeidLookup('Germany')))
 #print(getRateLimitStatus('users', 'suggestions'))
-
+#print(woeidLookup('new humpsure'))
