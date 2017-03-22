@@ -32,6 +32,9 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 client = yweather.Client()
 
+def print_status(text):
+    print(text)
+
 def getUsers(userIDs):
     users = []
     for user in userIDs:
