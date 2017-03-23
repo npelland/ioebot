@@ -18,4 +18,5 @@ client = yweather.Client()
 myStreamListener = StreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=StreamListener())
 
-myStream.filter(follow=['826616430653227008'])
+'''myStream.filter(follow=['826616430653227008'])'''
+myStream.filter(track=['programming'])

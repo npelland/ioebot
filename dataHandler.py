@@ -74,6 +74,6 @@ def getRateLimitStatus(rateSection, rateItem):
 #print(getTrendingTopics(woeidLookup('Germany')))
 #print(getRateLimitStatus('users', 'suggestions'))
 #print(woeidLookup('new humpsure'))
-temp = []
-temp.append(getUsers(2290107865))
-print(getTweets(temp))
+# temp = []
+# temp.append(getUsers(2290107865))
+# print(getTweets(temp))
